@@ -1,12 +1,20 @@
-function clicou() {
-    // alert("Você clicou no botão");
+var campo = document.getElementById('titulo');
 
-    document.getElementById('titulo').innerHTML = 'Obrigado!';
+function verde(){
+    limpaCor();
+    campo.classList.add('verde');    
+}
+function vermelho(){
+    limpaCor();
+    campo.classList.add('vermelho');    
+}
+function azul(){
+    limpaCor();
+    campo.classList.add('azul');    
 }
 
-function eventKey(e){
-    if(e.keyCode == 13){
-        let texto = document.getElementById('campo').value;
-        alert(texto);
-    }
+function limpaCor() {
+    campo.classList.remove('verde');
+    campo.classList.remove('vermelho');
+    campo.classList.remove('azul');
 }
