@@ -1,13 +1,12 @@
-function alterar(){
-    document.getElementById('titulo').innerHTML = 'Trocou o título';
-    document.getElementById('campo').value = 'Trocou o campo';
+function clicou() {
+    // alert("Você clicou no botão");
+
+    document.getElementById('titulo').innerHTML = 'Obrigado!';
 }
 
-function somar(x, y){
-    let result = x+y;
-    return result;
+function eventKey(e){
+    if(e.keyCode == 13){
+        let texto = document.getElementById('campo').value;
+        alert(texto);
+    }
 }
-
-var resultado = somar(1,2);
-
-console.log(resultado);
