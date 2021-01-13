@@ -1,20 +1,15 @@
-let lista = [45, 4, 9, 16, 25, 85]
-let lista2 = []
+let lista = [
+    {id: 1, nome: 'Athos', sobrenome: 'Francisco'},
+    {id: 2, nome: 'Pedro', sobrenome: 'Lira'},
+    {id: 3, nome: 'Alexia', sobrenome: 'Lucia'},
+]
 
-lista2 = lista.map(function(item){
-    return item*2
+let pessoa = lista.find(function(item){
+    return item.sobrenome == 'Lucia'
 })
 
-lista2 = lista.filter(function(item){
-    return item > 20
+pessoa = lista.findIndex(function(item){
+    return item.sobrenome == 'Lucia'
 })
 
-lista2 = lista.every(function(item){
-    return item <100
-})
-
-lista2 = lista.some(function(item){
-    return item > 100
-})
-
-console.log(lista2)
+console.log(pessoa)
