@@ -1,26 +1,20 @@
-let lista = ['Palio', 'Siena', 'Uno', 'Estrada']
-let lista2 = [1,2.,3]
+let lista = [45, 4, 9, 16, 25, 85]
+let lista2 = []
 
-let resultado
-resultado = lista.toString()
-resultado = lista.join('/')
-resultado = lista.indexOf('Uno')
-resultado = lista.concat(lista2)
+lista2 = lista.map(function(item){
+    return item*2
+})
 
-console.log(resultado)
+lista2 = lista.filter(function(item){
+    return item > 20
+})
 
-lista.pop() // remove o último elemento
-console.log(lista)
+lista2 = lista.every(function(item){
+    return item <100
+})
 
-lista.shift() //remove o primeiro elemento
-console.log(lista)
+lista2 = lista.some(function(item){
+    return item > 100
+})
 
-lista.push('Toro') //adiciona item no array
-console.log(lista)
-
-lista.splice(1,1) //exclui elementos do array
-console.log(lista)
-
-lista.sort()
-lista.reverse()
-console.log(lista)
+console.log(lista2)
