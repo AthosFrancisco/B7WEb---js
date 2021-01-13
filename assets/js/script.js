@@ -1,21 +1,10 @@
-let nome = 'Athos Francisco Pereira do Carmo';
+let n = 10.0254225621
+let n1 = '10.65'
 
-let resultado;
-resultado = nome.length;
-resultado = nome.indexOf('Francisc');
-resultado = nome.slice(5, 20);
-resultado = nome.slice(5);
-resultado = nome.slice(-5);
-resultado = nome.slice(-17, -12);
-resultado = nome.substring(5, 20);
-resultado = nome.substring(5);
-resultado = nome.substr(5, 10);
-resultado = nome.substr(-5, 5);
-resultado = nome.replace('Athos', 'Miria');
-resultado = nome.toUpperCase();
-resultado = nome.toLowerCase();
-resultado = nome.trim();
-resultado = nome[3];
-resultado = nome.split(' ');
+let resultado
+resultado = n.toString()
+resultado = n.toFixed(3)
+resultado = parseFloat(n1) + 2
+resultado = parseInt(n1) + 2
 
-console.log(resultado);
+console.log(resultado)
