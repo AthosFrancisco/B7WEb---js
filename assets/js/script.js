@@ -1,26 +1,62 @@
-let d = new Date()
-let resultado
+function showHour(){
+    let date = new Date()
+    let h, m, s
+    h = date.getHours() < 10 ? '0'+date.getHours() : date.getHours()
+    m = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
+    s = date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds()
 
-resultado = d.getFullYear()
-resultado = d.getMonth() // retorna o mês mas a contagem começa do 0
-resultado = d.getDay() //retorna o dia da semana, começando no domingo (0)
-resultado = d.getDate() // dia atual
-resultado = d.getHours() 
-resultado = d.getMinutes() 
-resultado = d.getSeconds() 
-resultado = d.getMilliseconds() 
-resultado = d.getTime() 
+    let demo = document.querySelector('#demo')
+    demo.innerHTML = `${h}:${m}:${s}`
+}
 
-// d.setFullYear(2023)
-// d.setFullYear(d.getFullYear()+3)
-// resultado = d.setMonth(60)
-// resultado = d.setMonth(d.getMonth() + 60)
-// resultado = d.setDate(d.getDate()+50)
-// resultado = d.setHours(d.getHours() + 50) 
-// resultado = d.setMinutes(d.getMinutes() + 50) 
-// resultado = d.setSeconds(d.getSeconds() + 50) 
-// resultado = d.setMilliseconds(d.getMilliseconds() + 50)  
-resultado = d.setTime(d.getTime() + 50)
+function cronometro(){
+    let hour, minute, secound, millesecound
+    hour = document.querySelector('#hour')
+    minute = document.querySelector('#minute')
+    secound = document.querySelector('#secound')
+    millesecound = document.querySelector('#millesecound')
 
-// console.log(resultado)
-console.log(d)
+    // console.log(hour, minute, secound, millesecound)
+
+    let h, m, s, mm
+    h = Number.parseInt(hour.innerText)
+    m = Number.parseInt(minute.innerText)
+    s = Number.parseInt(secound.innerText)
+    mm = Number.parseInt(millesecound.innerText)
+
+    let date = new Date(2020,1,1,h,m,s,mm)
+    date.setMilliseconds(date.getMilliseconds() + 100)
+
+    h = date.getHours() < 10 ? '0'+date.getHours() : date.getHours()
+    m = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()
+    s = date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds()
+    mm = date.getMilliseconds() < 10 ? '0'+date.getMilliseconds() : date.getMilliseconds()
+
+    hour.innerText = h
+    minute.innerText = m
+    secound.innerText = s
+    millesecound.innerText = mm
+}
+
+function clearCronometro(){
+    document.querySelector('#hour').innerText = '00'
+    document.querySelector('#minute').innerText = '00'
+    document.querySelector('#secound').innerText = '00'
+    document.querySelector('#millesecound').innerText = '000'
+}
+
+let time
+
+
+function iniciar(){
+    // time = setInterval(showHour, 1*1000)
+    clearCronometro()
+    time = setInterval(cronometro, 1*100)
+}
+
+function parar(){
+    clearInterval(time)
+}
+
+document.querySelector('#init').addEventListener('click', iniciar)
+document.querySelector('#finish').addEventListener('click', parar)
