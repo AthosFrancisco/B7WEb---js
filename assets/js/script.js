@@ -1,26 +1,26 @@
-let d = new Date()
-let resultado
+let pessoa = {
+    // nome: 'Athos',
+    sobrenome: 'Francisco',
+    idade: 100,
+    social:{
+        instagram: {
+            url: 'AthosFrancisco',
+            seguidores: 100000
+        },
+        github: 'AthosFrancisco'
+    },
+    nomeCompleto: function() {
+        return `${this.nome} ${this.sobrenome}`
+    }
+}
 
-resultado = d.getFullYear()
-resultado = d.getMonth() // retorna o mês mas a contagem começa do 0
-resultado = d.getDay() //retorna o dia da semana, começando no domingo (0)
-resultado = d.getDate() // dia atual
-resultado = d.getHours() 
-resultado = d.getMinutes() 
-resultado = d.getSeconds() 
-resultado = d.getMilliseconds() 
-resultado = d.getTime() 
+// let nome = pessoa.nomeCompleto()
+let {nome:pessoaNome = 'Nenhum', sobrenome, sexo = 'm', social:{instagram:{url:instagram, seguidores}}} = pessoa
 
-// d.setFullYear(2023)
-// d.setFullYear(d.getFullYear()+3)
-// resultado = d.setMonth(60)
-// resultado = d.setMonth(d.getMonth() + 60)
-// resultado = d.setDate(d.getDate()+50)
-// resultado = d.setHours(d.getHours() + 50) 
-// resultado = d.setMinutes(d.getMinutes() + 50) 
-// resultado = d.setSeconds(d.getSeconds() + 50) 
-// resultado = d.setMilliseconds(d.getMilliseconds() + 50)  
-resultado = d.setTime(d.getTime() + 50)
+console.log(pessoaNome, sobrenome, sexo, instagram, seguidores)
 
-// console.log(resultado)
-console.log(d)
+function nomeCompleto({nome = 'Nenhum', sobrenome}){
+    return `${nome} ${sobrenome}`
+}
+
+console.log(nomeCompleto(pessoa))
