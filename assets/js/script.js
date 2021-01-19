@@ -1,19 +1,22 @@
-let infoArray = [
-    'Athos Francisco', 
-    'Athos', 
-    'Francisco', 
-    // '@thos'
-]
+// function somar(x, y){
+//     return x + y;
+// }
 
-function eventos() {
-    return ['casamento', 'almoço', 'jantar']
+// let somar = function (x, y) {
+//     return x + y
+// }
+
+// let somar = (x, y) =>{
+//     return x + y
+// }
+
+// let somar = (x, y) => x+y
+
+// let letrasNoNome = nome => nome.length
+
+let letrasNoNome = nome =>{
+    return nome.length
 }
 
-let [a, b, c] = eventos()
-
-console.log(a, b, c)
-
-// let [nomeCompleto, nome, sobrenome, instagram] = infoArray
-let [nomeCompleto, nome, , instagram = 'Não há'] = infoArray
-
-console.log(nomeCompleto, nome, instagram)
+// console.log(somar(2, 4))
+console.log(letrasNoNome('Athos'))
