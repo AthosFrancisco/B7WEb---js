@@ -1,26 +1,19 @@
-let pessoa = {
-    // nome: 'Athos',
-    sobrenome: 'Francisco',
-    idade: 100,
-    social:{
-        instagram: {
-            url: 'AthosFrancisco',
-            seguidores: 100000
-        },
-        github: 'AthosFrancisco'
-    },
-    nomeCompleto: function() {
-        return `${this.nome} ${this.sobrenome}`
-    }
+let infoArray = [
+    'Athos Francisco', 
+    'Athos', 
+    'Francisco', 
+    // '@thos'
+]
+
+function eventos() {
+    return ['casamento', 'almoço', 'jantar']
 }
 
-// let nome = pessoa.nomeCompleto()
-let {nome:pessoaNome = 'Nenhum', sobrenome, sexo = 'm', social:{instagram:{url:instagram, seguidores}}} = pessoa
+let [a, b, c] = eventos()
 
-console.log(pessoaNome, sobrenome, sexo, instagram, seguidores)
+console.log(a, b, c)
 
-function nomeCompleto({nome = 'Nenhum', sobrenome}){
-    return `${nome} ${sobrenome}`
-}
+// let [nomeCompleto, nome, sobrenome, instagram] = infoArray
+let [nomeCompleto, nome, , instagram = 'Não há'] = infoArray
 
-console.log(nomeCompleto(pessoa))
+console.log(nomeCompleto, nome, instagram)
