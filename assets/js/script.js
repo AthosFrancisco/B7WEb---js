@@ -1,22 +1,19 @@
-// function somar(x, y){
-//     return x + y;
-// }
+let numeros = [1,2,3,4]
 
-// let somar = function (x, y) {
-//     return x + y
-// }
+let outrosNumeros = [...numeros, 5,6,7,8]
 
-// let somar = (x, y) =>{
-//     return x + y
-// }
+console.log(outrosNumeros)
 
-// let somar = (x, y) => x+y
+/////////////////////////////////////////
 
-// let letrasNoNome = nome => nome.length
-
-let letrasNoNome = nome =>{
-    return nome.length
+adicicionarInfo = info =>{
+    let novasInfo = {
+        ...info,
+        status: 0,
+        token: 'sdhlfjgsjdlfkjlj',
+        data_cadastro: '.....'
+    }
+    return novasInfo 
 }
 
-// console.log(somar(2, 4))
-console.log(letrasNoNome('Athos'))
+console.log(adicicionarInfo({nome: 'Athos', sobrenome: 'Francisco'}))
