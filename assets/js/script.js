@@ -1,19 +1,17 @@
-let numeros = [1,2,3,4]
-
-let outrosNumeros = [...numeros, 5,6,7,8]
-
-console.log(outrosNumeros)
-
-/////////////////////////////////////////
-
-adicicionarInfo = info =>{
-    let novasInfo = {
-        ...info,
-        status: 0,
-        token: 'sdhlfjgsjdlfkjlj',
-        data_cadastro: '.....'
-    }
-    return novasInfo 
+function nomes(...nome){
+    console.log(nome)
 }
 
-console.log(adicicionarInfo({nome: 'Athos', sobrenome: 'Francisco'}))
+nomes('Athos', 'José', 'Ademir')
+
+////////////////////////////////////////////
+
+function adicionar(nomes, ...novosNomes) {
+    return [...nomes, ...novosNomes]
+}
+
+nomes = ["Athos", "Francisco"]
+
+let outros = adicionar(nomes, "Carlos", "Gabriel", "RUbenilson")
+
+console.log(outros)
