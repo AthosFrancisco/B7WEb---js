@@ -1,17 +1,36 @@
-function nomes(...nome){
-    console.log(nome)
+// 22 - Includes e repeat
+
+let receitaArray = ['ovo', 'farinha', 'trigo']
+let nome = 'Athos'
+
+console.log(receitaArray.includes('ovos'))
+console.log(nome.includes('O'))
+
+console.log(nome.repeat(10))
+
+// 23 Objeto: Key, Values e Entries
+
+let pessoa = {
+    nome: 'Athos',
+    sobrenome: 'Francisco',
+    idade: 100
 }
 
-nomes('Athos', 'José', 'Ademir')
+console.log(Object.keys(receitaArray))
+console.log(Object.keys(pessoa))
 
-////////////////////////////////////////////
+console.log(Object.values(receitaArray))
+console.log(Object.values(pessoa))
 
-function adicionar(nomes, ...novosNomes) {
-    return [...nomes, ...novosNomes]
-}
+console.log(Object.entries(receitaArray))
+console.log(Object.entries(pessoa))
 
-nomes = ["Athos", "Francisco"]
+// 24 - String, padStart, padEnd
 
-let outros = adicionar(nomes, "Carlos", "Gabriel", "RUbenilson")
+let cartao = '1234123412341234'
 
-console.log(outros)
+let cartaoReduzido = cartao.slice(-4)
+let cartaoReduzidoFinal = cartao.slice(0, 4)
+
+console.log(cartaoReduzido.padStart(16, '*'))
+console.log(cartaoReduzidoFinal.padEnd(16, '*'))
