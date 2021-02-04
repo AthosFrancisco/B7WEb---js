@@ -1,15 +1,13 @@
-const fazer = () =>{
-    return new Promise((res, rej) => {
-        // res('OK');
-        setTimeout(() => {
-            res('OK');
-        }, 3000);
+fetch('https://alunos.b7web.com.br/api/ping',
+    {
+        // method: 'POST', chamada post não funciona para essa url, por isso não dá pra enviar no bory da requisição
+        method: 'GET',
+        // body: JSON.stringify({
+        //     nome: 'Athos',
+        //     idade: 26
+        // })
     })
-}
-
-fazer()
-    .then((resposta) => {
-        console.log(resposta)
+    .then((r)=>r.json())
+    .then((json) => {
+        console.log(json.resultado[0])
     })
-
-console.log('Depois da promessa')
